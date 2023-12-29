@@ -1,0 +1,32 @@
+<div class="contacts-page">
+    <div>
+        <app-toolbar (function)="showDialog()" [(termoBusca)]="termoBusca" (secoundFunction)="searchContacts()" ></app-toolbar>
+        <div class="card flex justify-content-center">
+            <p-dialog header="Criar Contato" [(visible)]="visible" [style]="{width: '50vw', height: '50vw'}">
+                <form [formGroup]="formGroup">
+                    <input formControlName="dsContato" pInputText placeholder="Nome do Contato" />
+                    <input formControlName="nrCelular" pInputText placeholder="Número do Telefone" />
+                    <input formControlName="dsEmail" pInputText placeholder="Email" />
+                    <p-multiSelect formControlName="stAtivo" [options]="options" optionLabel="name" placeholder="Ativo | Inativo"></p-multiSelect>
+                </form>
+                <div>
+                    <p-button (onClick)="createContact()" label="Criar Contato"></p-button>
+                </div>
+            </p-dialog>
+        </div>
+    </div>
+    @if (dataTable.length) {
+        <div class="contacts-page__cards">
+            <app-card title="Total de Contatos" [text]="dataTable.length"></app-card>
+            <app-card title="Ativos" [text]="numberActivecontacts"></app-card>
+            <app-card title="Inativos" [text]="numberInactivecontacts"></app-card>
+        </div>
+        <div class="contacts-page__table">
+            <app-table [cols]="cols" [dataTable]="dataTable"></app-table>
+        </div>
+    }@else {
+        <div>
+            <p>Não tem dados!</p>
+        </div>
+    }
+</div>

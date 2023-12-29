@@ -1,0 +1,16 @@
+.card{
+    &__active{
+        background-color: green;
+        border-radius: 5px;
+        padding: 4px;
+        text-align: center;
+        color: #fff;
+    }
+    &__inactive{
+        background-color: red;
+        border-radius: 5px;
+        padding: 4px;
+        text-align: center;
+        color: #fff;
+    }
+}

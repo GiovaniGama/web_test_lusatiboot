@@ -1,0 +1,18 @@
+<p-toolbar>
+    <div class="p-toolbar-group-start">
+        <button 
+            pButton icon="pi pi-plus" 
+            pTooltip="Criar contato" 
+            class="mr-2"
+            (click)="action($event)"
+            ></button>
+    </div>
+    <div class="p-toolbar-group-center">
+        <form (ngSubmit)="functionSubmit($event)">
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input [(ngModel)]="termoBusca" (ngModelChange)="onTermoBuscaChange($event)" [ngModelOptions]="{standalone: true}" pInputText placeholder="Buscar Contato" />
+            </span>
+        </form>
+    </div>
+</p-toolbar>

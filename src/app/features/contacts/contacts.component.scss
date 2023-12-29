@@ -1,0 +1,9 @@
+.contacts-page{
+    padding: 40px;
+    &__cards{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
+    }
+}

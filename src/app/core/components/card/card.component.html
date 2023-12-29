@@ -1,0 +1,7 @@
+<div class="card flex justify-content-center">
+    <p-card class="card-component" [header]="title" [style]="{ width: '360px' }">
+        <p [ngClass]="{ card__active: title === 'Ativos', card__inactive: title === 'Inativos', card__total: title === 'Total de Contatos'}" class="m-0">
+            Quantidade: {{text}}
+        </p>
+    </p-card>
+</div>

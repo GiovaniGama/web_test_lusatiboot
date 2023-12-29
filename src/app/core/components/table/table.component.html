@@ -1,0 +1,36 @@
+<div class="card">
+    <p-table 
+        [columns]="cols" 
+        [value]="dataTable" 
+        [tableStyle]="{ 'min-width': '50rem' }"
+        [paginator]="true"
+        [rows]="10"
+        [showCurrentPageReport]="true">
+        <ng-template pTemplate="header" let-rowData let-columns>
+            <tr>
+                @for (col of columns; track $index) {
+                    <th>{{ col.header }}</th>
+                }
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+                @for(col of columns; track $index){
+                    @if (col.header != 'Ativo | Inativo') {
+                        <td>{{rowData[col.field]}}</td>
+                    }@else {
+                        <td>
+                            <div [ngClass]="{ card__active: rowData[col.field] == '1', card__inactive: rowData[col.field] != '1'}">
+                                @if(rowData[col.field] === 1){
+                                    Ativo
+                                }@else {
+                                    Inativo
+                                }
+                            </div>
+                        </td>
+                    }
+                }
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

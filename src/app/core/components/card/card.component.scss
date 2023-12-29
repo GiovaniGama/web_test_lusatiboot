@@ -1,0 +1,19 @@
+.card{
+    p{
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        color: #fff;
+    }
+
+    &__total{
+        background-color: gray;
+    }
+
+    &__active{
+        background-color: green;
+    }
+    &__inactive{
+        background-color: red;
+    }
+}

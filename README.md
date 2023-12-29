@@ -38,12 +38,16 @@ git clone https://github.com/GiovaniGama/web_test_lusatiboot.git
 ```bash
 cd web_test_lusatiboot
 ```
-3. Instale as dependências necessárias do front-end
+3. No arquivo environment.development.ts adiciona a variável, essa é url da api que irá rodar localmente.
+```bash
+urlApi: 'http://127.0.0.1:3333'
+```
+4. Instale as dependências necessárias do front-end
 ```bash
 npm i
 npm run start
 ```
-4. Abra no navegador com a url http://localhost:4200/
+5. Abra no navegador com a url http://localhost:4200/
 
 
 ## Autores

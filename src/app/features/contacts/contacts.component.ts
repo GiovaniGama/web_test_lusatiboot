@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactsService } from './service/contacts.service';
+import { ContactsService } from './service/contact/contacts.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IContact, IContactHeader, IOptionsContacts } from '../../core/models/contactsModel/contacts.model';
 import { TableComponent } from "../../core/components/table/table.component";
@@ -116,9 +116,19 @@ export class ContactsComponent implements OnInit{
     const selectedOptions = formValue.stAtivo.map((option: IOptionsContacts) => option.code);
     formValue.stAtivo = selectedOptions.includes(true);
 
-    this.contactsService.createContact(this.formGroup.value).subscribe(result => this.dataTable.push(result))
+    if (this.dataTable) {
+      this.contactsService.createContact(formValue).subscribe(result => {
+        const index = this.dataTable.findIndex(contact => contact.id === result.id);
+        if (index !== -1) {
+          this.dataTable[index] = result;
+        }
+      });
+    }
+
     this.visible = false;
 
     this.formGroup.reset()
+
+    window.location.reload();
   }
 }

@@ -11,6 +11,8 @@
                 @for (col of columns; track $index) {
                     <th>{{ col.header }}</th>
                 }
+                <th>Editar</th>
+                <th>Deletar</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns">
@@ -30,7 +32,26 @@
                         </td>
                     }
                 }
+                <td>
+                    <p-button (onClick)="showDialog(rowData)" icon="pi pi-external-link" label="Editar Contato"></p-button>
+                </td>
+                <td>
+                    <p-button (onClick)="deleteContact(rowData)" icon="pi pi-trash" label="Deletar Contato" styleClass="p-button-danger"></p-button>
+                </td>
             </tr>
         </ng-template>
     </p-table>
+    <p-dialog *ngIf="dataContact" [header]="dataContact.dsContato" [(visible)]="visible" [style]="{ height: '30vw'}">
+        <div class="card__form">
+            <form [formGroup]="formGroup">
+                <input formControlName="dsContato" pInputText placeholder="Nome do Contato" />
+                <input formControlName="nrCelular" pInputText placeholder="Número do Telefone" />
+                <input formControlName="dsEmail" pInputText placeholder="Email" />
+                <p-multiSelect formControlName="stAtivo" [options]="options" optionLabel="name" placeholder="Ativo | Inativo"></p-multiSelect>
+            </form>
+            <div>
+                <p-button (onClick)="editContact()" label="Editar Contato"></p-button>
+            </div>
+        </div>
+    </p-dialog>
 </div>

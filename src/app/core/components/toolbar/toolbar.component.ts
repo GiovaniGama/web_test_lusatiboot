@@ -32,7 +32,6 @@ export class ToolbarComponent {
   }
 
   functionSubmit(event: any){
-    console.log(this.termoBusca)
     this.secoundFunction.emit(event);
   }
 

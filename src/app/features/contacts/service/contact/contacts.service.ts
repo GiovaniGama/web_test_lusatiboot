@@ -1,8 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IContact } from '../../../core/models/contactsModel/contacts.model';
-import { environment } from '../../../../environments/environment.development';
+import { IContact } from '../../../../core/models/contactsModel/contacts.model';
+import { environment } from '../../../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +29,16 @@ export class ContactsService {
 
   createContact(contact: IContact): Observable<IContact>{
     return  this.http.post<IContact>(`${this.url}/contacts`, contact)
+  }
+
+  updateContact(id: number, data: any): Observable<IContact> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const url = `${this.url}/contacts/${id}`;
+    return this.http.put<IContact>(url, data, { headers });
+  }
+
+  deleteContact(id: number): Observable<IContact>{
+    const url = `${this.url}/contacts/${id}`;
+    return this.http.delete<IContact>(url);
   }
 }

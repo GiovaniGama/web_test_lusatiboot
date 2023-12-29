@@ -2,15 +2,17 @@
     <div>
         <app-toolbar (function)="showDialog()" [(termoBusca)]="termoBusca" (secoundFunction)="searchContacts()" ></app-toolbar>
         <div class="card flex justify-content-center">
-            <p-dialog header="Criar Contato" [(visible)]="visible" [style]="{width: '50vw', height: '50vw'}">
-                <form [formGroup]="formGroup">
-                    <input formControlName="dsContato" pInputText placeholder="Nome do Contato" />
-                    <input formControlName="nrCelular" pInputText placeholder="Número do Telefone" />
-                    <input formControlName="dsEmail" pInputText placeholder="Email" />
-                    <p-multiSelect formControlName="stAtivo" [options]="options" optionLabel="name" placeholder="Ativo | Inativo"></p-multiSelect>
-                </form>
-                <div>
-                    <p-button (onClick)="createContact()" label="Criar Contato"></p-button>
+            <p-dialog header="Criar Contato" [(visible)]="visible" [style]="{height: '30vw'}">
+                <div class="contacts-page__dialog">
+                    <form  [formGroup]="formGroup">
+                        <input formControlName="dsContato" pInputText placeholder="Nome do Contato" />
+                        <input formControlName="nrCelular" pInputText placeholder="Número do Telefone" />
+                        <input formControlName="dsEmail" pInputText placeholder="Email" />
+                        <p-multiSelect formControlName="stAtivo" [options]="options" optionLabel="name" placeholder="Ativo | Inativo"></p-multiSelect>
+                    </form>
+                    <div>
+                        <p-button (onClick)="createContact()" label="Criar Contato"></p-button>
+                    </div>
                 </div>
             </p-dialog>
         </div>

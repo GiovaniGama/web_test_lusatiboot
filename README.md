@@ -1,27 +1,50 @@
-# WebTestLusatiboot
+<div>
+    <summary><h3>Projeto de Gerenciar Contatos</h3></summary>
+    <br />  
+    <summary><h3>O que é o projeto?</h3></summary>
+    <br />
+    <div>
+        <p>
+            O projeto é um crud simples que faz o gerenciamento de contatos, ele salva, cria, edita e deleta seus contatos.
+        </p>
+    </div>
+    <br />
+    <summary><h3>Tabela de Contatos:</h3></summary>
+    <br />
+    <div>
+        <p>
+            A tabela exibe todos os contatos com os dados que o usuário criou, então, é mostrado Nome do Contado, Número de Celular, Id e se ele está ativo ou inativo.
+        </p>
+    </div>
+    <br />
+</div>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+## Tecnologias utilizadas 
+- [Node](https://nodejs.org/en/)
+- [Angular](https://angular.io/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Prime Ng](https://primeng.org/)
 
-## Development server
+## Como executar a aplicação 
+### Pré-requisitos
+* Node: Siga os passos da instalação no [site oficial](https://nodejs.org/en/download/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Instalação
+1. Clone o repositório
+```bash
+git clone https://github.com/GiovaniGama/web_test_lusatiboot.git
+```
+2. Acesse a pasta do projeto
+```bash
+cd web_test_lusatiboot
+```
+3. Instale as dependências necessárias do front-end
+```bash
+npm i
+npm run start
+```
+4. Abra no navegador com a url http://localhost:4200/
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Autores
+<a href="https://github.com/GiovaniGama">Giovani Gama</a> 🚀 

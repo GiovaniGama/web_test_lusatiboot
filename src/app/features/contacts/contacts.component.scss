@@ -6,4 +6,16 @@
         align-items: center;
         margin: 20px;
     }
+    &__dialog{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
 }
